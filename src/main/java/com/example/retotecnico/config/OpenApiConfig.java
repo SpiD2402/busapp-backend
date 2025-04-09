@@ -12,8 +12,8 @@ public class OpenApiConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("API de Gestión de Productos y Clientes")
-                        .description("API REST para la gestión de productos y clientes")
+                        .title("API de BusesApp")
+                        .description("API REST para Buses")
                         .version("1.0.0")
                         .contact(new Contact()
                                 .name("Desarrollador")
