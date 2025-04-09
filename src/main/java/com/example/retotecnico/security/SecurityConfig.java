@@ -31,12 +31,24 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtFilter jwtFilter) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth ->
-                        auth.requestMatchers("/auth/singin","/auth/login","/role","/bus/**").permitAll()
+                        auth.requestMatchers(
+                                        "/auth/singin",
+                                        "/auth/login",
+                                        "/role",
+                                        "/bus/**",
+                                        "/marca/**",
+                                        // Endpoints de Swagger
+                                        "/swagger-ui/**",
+                                        "/swagger-ui.html",
+                                        "/v3/api-docs/**",
+                                        "/v3/api-docs",
+                                        "/swagger-resources/**",
+                                        "/webjars/**"
+                                ).permitAll()
                                 .anyRequest().authenticated()
                 )
                 .addFilterAfter(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()));
-
 
         return http.build();
     }

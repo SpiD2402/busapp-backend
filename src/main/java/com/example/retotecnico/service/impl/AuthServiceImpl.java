@@ -3,7 +3,6 @@ package com.example.retotecnico.service.impl;
 import com.example.retotecnico.dto.AuthResponse;
 import com.example.retotecnico.dto.LoginRequest;
 import com.example.retotecnico.dto.RegisterRequest;
-import com.example.retotecnico.mapper.AuthMapper;
 import com.example.retotecnico.model.Role;
 import com.example.retotecnico.model.Usuario;
 import com.example.retotecnico.repository.RoleRepository;
@@ -89,7 +88,7 @@ public class AuthServiceImpl implements AuthService  {
         usuarioRepository.save(usuario);
         RegisterRequest response = new RegisterRequest();
         response.setUsername(usuario.getUsername());
-        response.setPassword(null);
+        response.setPassword(usuario.getPassword());
         response.setRol(role.getNombre());
 
         return response;

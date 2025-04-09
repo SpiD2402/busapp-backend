@@ -1,9 +1,11 @@
 package com.example.retotecnico.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "buses")
 public class Bus {
@@ -31,72 +33,4 @@ public class Bus {
     @JoinColumn(name = "marca_id")
     private Marca marca;
 
-    public Bus() {
-    }
-
-    public Bus(Long id, String numeroBus, String placa, String caracteristicas, LocalDateTime fechaCreacion, Boolean activo, Marca marca) {
-        this.id = id;
-        this.numeroBus = numeroBus;
-        this.placa = placa;
-        this.caracteristicas = caracteristicas;
-        this.fechaCreacion = fechaCreacion;
-        this.activo = activo;
-        this.marca = marca;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNumeroBus() {
-        return numeroBus;
-    }
-
-    public void setNumeroBus(String numeroBus) {
-        this.numeroBus = numeroBus;
-    }
-
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
-    public String getCaracteristicas() {
-        return caracteristicas;
-    }
-
-    public void setCaracteristicas(String caracteristicas) {
-        this.caracteristicas = caracteristicas;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public Boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
-
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
 }

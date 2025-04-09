@@ -1,9 +1,11 @@
 package com.example.retotecnico.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "marcas")
 public class Marca {
@@ -18,36 +20,5 @@ public class Marca {
     private List<Bus> buses;
 
 
-    public Marca() {
-    }
 
-    public Marca(Long id, String nombre, List<Bus> buses) {
-        this.id = id;
-        this.nombre = nombre;
-        this.buses = buses;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public List<Bus> getBuses() {
-        return buses;
-    }
-
-    public void setBuses(List<Bus> buses) {
-        this.buses = buses;
-    }
 }
